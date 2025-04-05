@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Version inicial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <!-- Input para el nombre del producto -->
+            <div class="input-field col s12 m6">
+              <input id="nombre" type="text" class="validate" name="nombre" />
+              <label for="nombre">Nombre del producto</label>
+            </div>
+
+            <!-- Input para el precio -->
+            <div class="input-field col s12 m6">
+              <input
+                id="precio"
+                type="number"
+                class="validate"
+                step="0.01"
+                min="0"
+                name="precio"
+              />
+              <label for="precio">Precio</label>
+            </div>
+          </div>
+
+          <!-- Botón para enviar -->
+          <button
+            class="btn waves-effect waves-light btn-add-prod"
+            type="submit"
+            name="action"
+          >
+            Agregar producto
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container container-produc"></div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</html>
