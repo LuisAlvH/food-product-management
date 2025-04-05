@@ -1,0 +1,13 @@
+.swal-title-large {
+  font-size: 28px !important;
+}
+
+.swal-popup-large {
+  font-size: 20px !important;
+}
+
+.swal-button-large {
+  font-size: 18px !important;
+  padding: 10px 20px;
+  width: 200px;
+}

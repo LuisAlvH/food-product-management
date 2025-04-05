@@ -13,20 +13,24 @@ addProduc.addEventListener("click", (event) => {
   const precio = document.querySelector('input[name="precio"]');
   const id = Math.floor(Math.random() * 10000);
 
-  let productos = JSON.parse(localStorage.getItem("productos")) || [];
-  productos.push(
-    metodosProducto.creandoTextoProducto(nombre.value, precio.value, id)
-  );
-  localStorage.setItem("productos", JSON.stringify(productos));
-  metodosProducto.agregandoComponenteProducto(
-    metodosProducto.creandoComponenteProducto(nombre.value, precio.value, id)
-  );
+  if (nombre.value.trim() !== "" && precio.value.trim() !== "") {
+    let productos = JSON.parse(localStorage.getItem("productos")) || [];
+    productos.push(
+      metodosProducto.creandoTextoProducto(nombre.value, precio.value, id)
+    );
+    localStorage.setItem("productos", JSON.stringify(productos));
+    metodosProducto.agregandoComponenteProducto(
+      metodosProducto.creandoComponenteProducto(nombre.value, precio.value, id)
+    );
 
-  nombre.value = "";
-  precio.value = "";
+    nombre.value = "";
+    precio.value = "";
+  } else {
+    metodosProducto.mostrarPopup();
+  }
 });
 
-///ELIMINAR PRODUCTO
+///CLICK BOTON ELIMINAR PRODUCTO
 const contenedorProductos = document.querySelector(".container-produc");
 contenedorProductos.addEventListener("click", (e) => {
   const btnEliminar = e.target.closest(".btn-delete-prod");

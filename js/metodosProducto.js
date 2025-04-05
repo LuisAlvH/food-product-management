@@ -48,3 +48,18 @@ export function renderizadoInicial(listProductos) {
     );
   });
 }
+export function mostrarPopup() {
+  Swal.fire({
+    title: "Campos incompletos",
+    text: "Por favor, completá todos los campos antes de continuar.",
+    icon: "warning",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#f57c00",
+    width: "900px",
+    customClass: {
+      title: "swal-title-large",
+      popup: "swal-popup-large",
+      confirmButton: "swal-button-large",
+    },
+  });
+}
